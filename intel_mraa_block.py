@@ -4,9 +4,9 @@ from nio.metadata.properties import VersionProperty
 
 
 @Discoverable(DiscoverableType.block)
-class Example(Block):
+class IntelMraa(Block):
 
-    """ This is the Example block. Put a brief description here. """
+    """ Use Intel's libmraa to interface with the IO on various platforms """
 
     version = VersionProperty('0.1.0')
 
