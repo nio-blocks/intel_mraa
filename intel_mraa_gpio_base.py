@@ -10,6 +10,10 @@ class IntelMraaGpioBase(Block):
     version = VersionProperty('0.1.0')
     mraa_gpio_pin = IntProperty(title='Mraa Pin #', default='31')
 
+    def __init__(self):
+        super().__init__()
+        self._gpio_pin = None
+
     def configure(self, context):
         super().configure(context)
         self._gpio_pin = mraa.Gpio(self.mraa_gpio_pin)
