@@ -1,24 +1,54 @@
-# Block Template
+IntelMraaGpioRead
+=================
 
-This repository serves as a "starter" repository for creating a new block.
+Use Intel's libmraa to read the IO on Galileo, Edison & other platforms
 
-## How to use
+Reads are driven by input signals.
 
-### Get the block template
+Properties
+----------
+-   **Mraa Pin #** (int): The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)
 
- 1. Fork this repository into your own block
- 1. Clone this repository and rename the folder
+Dependencies
+------------
+-   [**mraa**](https://github.com/intel-iot-devkit/mraa): Not on PyPI. Follow the install instruction on [sparkfun](https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison)
 
+Commands
+--------
+None
 
-### Rename the appropriate files
+Input
+-----
+Any list of signals. One read will be made per input signal.
 
- 1. Rename `example_block.py` to whatever your block name will be. We like to keep `_block` at the end of filenames that contain blocks.
- 1. In your new block Python file, rename the class to the new block's name. Do **not** put `Block` in the class name - this is implied.
- 1. Rename `test_example_block.py` to match your new block's class name. Always submit accompanying unit tests in the `tests` folder.
- 1. Rename `BLOCK_README.md` to `README.md` and update the documentation accordingly.
+Output
+------
+Each input signal is output with the added attribute **pin** which is the value read from the specified pin.
 
+--------------------------------------
 
-## File Reference
+IntelMraaGpioWrite
+==================
 
- * **example_block.py** : This is the block code. Additional Python classes and files are definitely welcome. If the file contains a Block class, make sure the filename ends with `_block.py`. If the file represents a Base Block that is not discoverable by itself, have the filename end with `_base.py`.
- * **requirements.txt** : List out any Python dependencies this block requires. This file will be installed by pip when the block is installed. The command for installing the dependencies is `pip install -r requirements.txt`.
+Use Intel's libmraa to write to the IO on Galileo, Edison & other platforms
+
+Properties
+----------
+-   **Mraa Pin #** (int): The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)
+-   **Pin Value** (exp): The value to write to the specifed **Mraa Pin #**. Regular boolean interpretation is done here except the string '0' is treated as False.
+
+Dependencies
+------------
+-   [**mraa**](https://github.com/intel-iot-devkit/mraa): Not on PyPI. Follow the install instruction on [sparkfun](https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison)
+
+Commands
+--------
+None
+
+Input
+-----
+Any list of signals. One write will be made per a signal.
+
+Output
+------
+Each input signal is output with the added attribute **write_status** which is the status value returned by the pin write.
