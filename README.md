@@ -13,7 +13,7 @@ Dependencies
 ------------
 -   [**mraa**](https://github.com/intel-iot-devkit/mraa): This is not on PyPI and require additonal install steps. Follow the install instruction on [sparkfun](https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison) with a couple updates:
    -   The step `apt-get install python-dev` needs to be updated to `apt-get install python3-dev`
-   -   The step `cmake .. -DBUILDSWIGNODE=OFF` needs to be updated to `cmake .. -DBUILDSWIGNODE=OFF DBUILDPYTHON3=ON`
+   -   The step `cmake .. -DBUILDSWIGNODE=OFF` needs to be updated to `cmake .. -DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON`
    -   If `export PYTHONPATH=$PYTHONPATH:$(dirname $(find /usr/local -name mraa.py))` doesn't work then `export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.4/site-packages` should suffice`
 
 Commands
