@@ -7,7 +7,7 @@ from unittest.mock import MagicMock, patch
 
 mraa_available = True
 try:
-    from ..intel_mraa_interrupt_gpio_block import IntelMraaWriteGpio
+    from ..intel_mraa_write_gpio_block import IntelMraaWriteGpio
 except:
     mraa_available = False
 
