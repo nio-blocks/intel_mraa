@@ -1,11 +1,17 @@
 from collections import defaultdict
 from nio.common.signal.base import Signal
 from nio.util.support.block_test_case import NIOBlockTestCase
-#from unittest import skipUnless
+from unittest import skipUnless
 from unittest.mock import MagicMock, patch
-from ..intel_mraa_write_gpio_block import IntelMraaWriteGpio
 
 
+mraa_available = True
+try:
+    from ..intel_mraa_interrupt_gpio_block import IntelMraaWriteGpio
+except:
+    mraa_available = False
+
+@skipUnless(mraa_available, 'mraa is not available!!')
 class TestIntelMraaWriteGpio(NIOBlockTestCase):
 
     def setUp(self):
