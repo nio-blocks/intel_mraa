@@ -1,9 +1,17 @@
 from collections import defaultdict
 from nio.common.signal.base import Signal
 from nio.util.support.block_test_case import NIOBlockTestCase
-from ..intel_mraa_write_gpio_block import IntelMraaWriteGpio
+from unittest import skipUnless
+from unittest.mock import MagicMock, patch
 
 
+mraa_available = True
+try:
+    from ..intel_mraa_write_gpio_block import IntelMraaWriteGpio
+except:
+    mraa_available = False
+
+@skipUnless(mraa_available, 'mraa is not available!!')
 class TestIntelMraaWriteGpio(NIOBlockTestCase):
 
     def setUp(self):
@@ -16,12 +24,14 @@ class TestIntelMraaWriteGpio(NIOBlockTestCase):
 
     def test_pass(self):
         pass
-
-    def test_defaults(self):
-        blk = IntelMraaGpioWrite()
+    
+    @patch('mraa.Gpio')
+    def test_defaults(self, mock_mraa_gpio):
+        blk = IntelMraaWriteGpio()
         self.configure_block(blk, {})
         blk.start()
+        blk._gpio_pin.write = MagicMock(return_value = 'Test Write Status')
         blk.process_signals([Signal()])
         blk.stop()
         self.assert_num_signals_notified(1)
-        self.assertDictEqual(self.last_notified['default'][0].to_dict(), {})
+        self.assertDictEqual(self.last_notified['default'][0].to_dict(), {"write_status": 'Test Write Status'})
