@@ -1,6 +1,6 @@
 import mraa
-from nio.common.block.base import Block
-from nio.metadata.properties import VersionProperty, IntProperty
+from nio.block.base import Block
+from nio.properties import VersionProperty, IntProperty
 
 
 class IntelMraaGpioBase(Block):
@@ -16,7 +16,7 @@ class IntelMraaGpioBase(Block):
 
     def configure(self, context):
         super().configure(context)
-        self._gpio_pin = mraa.Gpio(self.mraa_gpio_pin)
+        self._gpio_pin = mraa.Gpio(self.mraa_gpio_pin())
         self._gpio_pin.dir(self._pin_mode())
 
     def process_signals(self, signals, input_id='default'):
@@ -25,7 +25,7 @@ class IntelMraaGpioBase(Block):
             try:
                 out_sig = self._process_signal(signal)
             except:
-                self._logger.exception('Failed to process signal')
+                self.logger.exception('Failed to process signal')
                 continue
             out_sigs.append(out_sig)
         if out_sigs:

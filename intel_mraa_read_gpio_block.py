@@ -1,10 +1,10 @@
 import mraa
-from nio.common.signal.base import Signal
-from nio.common.discovery import Discoverable, DiscoverableType
+from nio.signal.base import Signal
+from nio.util.discovery import discoverable
 from .intel_mraa_gpio_base import IntelMraaGpioBase
 
 
-@Discoverable(DiscoverableType.block)
+@discoverable
 class IntelMraaReadGpio(IntelMraaGpioBase):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """

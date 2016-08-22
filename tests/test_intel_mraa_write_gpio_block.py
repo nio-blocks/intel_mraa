@@ -1,6 +1,6 @@
 from collections import defaultdict
-from nio.common.signal.base import Signal
-from nio.util.support.block_test_case import NIOBlockTestCase
+from nio.signal.base import Signal
+from nio.testing.block_test_case import NIOBlockTestCase
 from unittest import skipUnless
 from unittest.mock import MagicMock, patch
 
