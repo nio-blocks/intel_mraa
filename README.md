@@ -7,7 +7,7 @@ Reads are driven by input signals.
 
 Properties
 ----------
--   **mraa_pin #** (int): The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)
+-   **mraa_pin #** (type:int): The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)
 
 Dependencies
 ------------
@@ -32,7 +32,7 @@ Output
 ------
 Each input signal is output with the added attribute `pin`, which is the value read from the specified pin.
 
---------------------------------------
+***
 
 IntelMraaGpioWrite
 ==================
@@ -41,8 +41,8 @@ Use Intel's libmraa to write to the IO on Galileo, Edison & other platforms.
 
 Properties
 ----------
--   **mraa_pin_#** (int): The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)
--   **pin_value** (exp): The value to write to the specified **mraa_pin_#**. Regular boolean interpretation is done here except the string "0" is treated as `False`.
+-   **mraa_pin_#** (type:int): The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)
+-   **pin_value** (type:expression): The value to write to the specified **mraa_pin_#**. Regular boolean interpretation is done here except the string "0" is treated as `False`.
 
 Dependencies
 ------------
