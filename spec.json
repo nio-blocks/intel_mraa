@@ -1,42 +1,18 @@
 {
-    "nio/IntelMraaGpioWrite": {
-        "Version": "1.0.0",
-        "Commands": {},
-        "Description": "Use Intel's libmraa to write to the IO on Galileo, Edison & other platforms.",
-        "Input": {
-            "Description": "Any list of signals. One write will be made per a signal."
-        },
-        "Properties": {
-            "mraa_pin_#": {
-                "type": "int",
-                "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)"
-            },
-            "pin_value": {
-                "type": "expression",
-                "description": "The value to write to the specified mraa_pin_#. Regular boolean interpretation is done here except the string \"0\" is treated as `False`."
-            }
-        },
-        "Category": "Hardware",
-        "Output": {
-            "Description": "Each input signal is output with the added attribute `write_status` which is the status value returned by the pin write."
-        }
-    },
-    "nio/IntelMraaGpioRead": {
-        "Version": "1.0.0",
-        "Commands": {},
-        "Description": "Use Intel's libmraa to read the IO on Galileo, Edison & other platforms.\nReads are driven by input signals.",
-        "Category": "Hardware",
-        "Properties": {
-            "mraa_pin #": {
-                "type": "int",
-                "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)"
-            }
-        },
-        "Input": {
-            "Description": "Any list of signals. One read will be made per input signal."
-        },
-        "Output": {
-            "Description": "Each input signal is output with the added attribute `pin`, which is the value read from the specified pin."
-        }
-    }
+  "nio/IntelMraaGpioRead": {
+    "version": "0.0.1",
+    "description": "",
+    "inputs": {},
+    "outputs": {},
+    "properties": {},
+    "commands": {}
+  },
+  "nio/IntelMraaGpioWrite": {
+    "version": "0.0.1",
+    "description": "",
+    "inputs": {},
+    "outputs": {},
+    "properties": {},
+    "commands": {}
+  }
 }
