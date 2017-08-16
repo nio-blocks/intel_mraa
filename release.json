@@ -2,11 +2,11 @@
   "nio/IntelMraaGpioRead": {
     "language": "Python",
     "version": "0.0.1",
-    "reference": "github.com/nio-blocks/intel_mraa.git@v0.0.1"
+    "url": "git://github.com/nio-blocks/intel_mraa.git"
   },
   "nio/IntelMraaGpioWrite": {
     "language": "Python",
     "version": "0.0.1",
-    "reference": "github.com/nio-blocks/intel_mraa.git@v0.0.1"
+    "url": "git://github.com/nio-blocks/intel_mraa.git"
   }
 }
