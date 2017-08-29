@@ -1,18 +1,77 @@
 {
-  "nio/IntelMraaGpioRead": {
-    "version": "0.0.1",
-    "description": "",
-    "inputs": {},
-    "outputs": {},
-    "properties": {},
+  "nio/IntelMraaInterruptGpio": {
+    "version": "1.0.0",
+    "description": "Use Intel's libmraa to handle gpio interrupts from the IO on Galileo, Edison & other platforms.",
+    "properties": {
+      "mraa_gpio_pin": {
+        "title": "Mraa Pin #",
+        "type": "IntType",
+        "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)",
+        "default": "31"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals."
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "None."
+      }
+    },
     "commands": {}
   },
-  "nio/IntelMraaGpioWrite": {
-    "version": "0.0.1",
-    "description": "",
-    "inputs": {},
-    "outputs": {},
-    "properties": {},
+  "nio/IntelMraaReadGpio": {
+    "version": "1.0.0",
+    "description": "Use Intel's libmraa to read the IO on Galileo, Edison & other platforms. Reads are driven by input signals.",
+    "properties": {
+      "mraa_gpio_pin": {
+        "title": "Mraa Pin #",
+        "type": "IntType",
+        "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)",
+        "default": "31"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals. One read will be made per input signal."
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Each input signal is output with the added attribute `pin`, which is the value read from the specified pin."
+      }
+    },
+    "commands": {}
+  },
+  "nio/IntelMraaWriteGpio": {
+    "version": "1.0.0",
+    "description": "Use Intel's libmraa to write to the IO on Galileo, Edison & other platforms.",
+    "properties": {
+      "mraa_gpio_pin": {
+        "title": "Mraa Pin #",
+        "type": "IntType",
+        "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)",
+        "default": "31"
+      },
+      "value": {
+        "title": "Pin Value",
+        "type": "Type",
+        "description": "The value to write to the specified **mraa_pin_#**. Regular boolean interpretation is done here except the string '0' is treated as `False`.",
+        "default": "{{ $value }}"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals. One write will be made per a signal."
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Each input signal is output with the added attribute `write_status` which is the status value returned by the pin write."
+      }
+    },
     "commands": {}
   }
 }

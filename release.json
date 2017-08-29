@@ -1,12 +1,17 @@
 {
-  "nio/IntelMraaGpioRead": {
+  "nio/IntelMraaInterruptGpio": {
     "language": "Python",
-    "version": "0.0.1",
-    "url": "git://github.com/nio-blocks/intel_mraa.git"
+    "url": "git://github.com/nio-blocks/intel_mraa.git",
+    "version": "1.0.0"
   },
-  "nio/IntelMraaGpioWrite": {
+  "nio/IntelMraaReadGpio": {
     "language": "Python",
-    "version": "0.0.1",
-    "url": "git://github.com/nio-blocks/intel_mraa.git"
+    "url": "git://github.com/nio-blocks/intel_mraa.git",
+    "version": "1.0.0"
+  },
+  "nio/IntelMraaWriteGpio": {
+    "language": "Python",
+    "url": "git://github.com/nio-blocks/intel_mraa.git",
+    "version": "1.0.0"
   }
 }

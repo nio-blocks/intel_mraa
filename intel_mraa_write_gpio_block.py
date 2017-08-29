@@ -1,16 +1,16 @@
 import mraa
-from nio.signal.base import Signal
-from nio.util.discovery import discoverable
-from nio.properties import Property
+
+from nio.properties import Property, VersionProperty
+
 from .intel_mraa_gpio_base import IntelMraaGpioBase
 
 
-@discoverable
 class IntelMraaWriteGpio(IntelMraaGpioBase):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """
 
     value = Property(title='Pin Value', default='{{ $value }}')
+    version = VersionProperty("1.0.0")
 
     def _pin_mode(self):
         return mraa.DIR_OUT

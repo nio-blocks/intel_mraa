@@ -1,6 +1,8 @@
 import mraa
+
 from nio.signal.base import Signal
-from nio.util.discovery import discoverable
+from nio.properties import VersionProperty
+
 from .intel_mraa_gpio_base import IntelMraaGpioBase
 
 
@@ -13,10 +15,11 @@ def interrupt_callback(self):
                                  "pin_number": pin_number})])
 
 
-@discoverable
 class IntelMraaInterruptGpio(IntelMraaGpioBase):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """
+
+    version = VersionProperty("1.0.0")
 
     def configure(self, context):
         super().configure(context)
