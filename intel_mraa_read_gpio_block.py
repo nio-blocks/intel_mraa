@@ -1,13 +1,16 @@
 import mraa
-from nio.signal.base import Signal
-from nio.util.discovery import discoverable
+
+from nio.properties import VersionProperty
+from nio.block.base import Block
+
 from .intel_mraa_gpio_base import IntelMraaGpioBase
 
 
-@discoverable
-class IntelMraaReadGpio(IntelMraaGpioBase):
+class IntelMraaReadGpio(IntelMraaGpioBase, Block):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """
+
+    version = VersionProperty("1.0.0")
 
     def _pin_mode(self):
         return mraa.DIR_IN

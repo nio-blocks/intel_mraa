@@ -1,13 +1,12 @@
 import mraa
-from nio.block.base import Block
-from nio.properties import VersionProperty, IntProperty
+
+from nio.properties import IntProperty
 
 
-class IntelMraaGpioBase(Block):
+class IntelMraaGpioBase(object):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """
 
-    version = VersionProperty('0.1.0')
     mraa_gpio_pin = IntProperty(title='Mraa Pin #', default='31')
 
     def __init__(self):

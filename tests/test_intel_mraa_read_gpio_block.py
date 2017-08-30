@@ -1,8 +1,9 @@
 from collections import defaultdict
-from nio.signal.base import Signal
-from nio.testing.block_test_case import NIOBlockTestCase
 from unittest import skipUnless
 from unittest.mock import MagicMock, patch
+
+from nio.signal.base import Signal
+from nio.testing.block_test_case import NIOBlockTestCase
 
 
 mraa_available = True
@@ -10,6 +11,7 @@ try:
     from ..intel_mraa_read_gpio_block import IntelMraaReadGpio
 except:
     mraa_available = False
+
 
 @skipUnless(mraa_available, 'mraa is not available!!')
 class TestIntelMraaReadGpio(NIOBlockTestCase):
@@ -24,14 +26,15 @@ class TestIntelMraaReadGpio(NIOBlockTestCase):
 
     def test_pass(self):
         pass
-    
+
     @patch('mraa.Gpio')
     def test_defaults(self, mock_mraa_gpio):
         blk = IntelMraaReadGpio()
         self.configure_block(blk, {})
         blk.start()
-        blk._gpio_pin.read = MagicMock(return_value = 1)
+        blk._gpio_pin.read = MagicMock(return_value=1)
         blk.process_signals([Signal()])
         blk.stop()
         self.assert_num_signals_notified(1)
-        self.assertDictEqual(self.last_notified['default'][0].to_dict(), {"pin": 1})
+        self.assertDictEqual(self.last_notified['default'][0].to_dict(),
+                             {"pin": 1})
