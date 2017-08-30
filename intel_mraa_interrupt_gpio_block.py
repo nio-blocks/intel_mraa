@@ -1,5 +1,6 @@
 import mraa
 
+from nio import TerminatorBlock
 from nio.signal.base import Signal
 from nio.properties import VersionProperty
 
@@ -15,7 +16,7 @@ def interrupt_callback(self):
                                  "pin_number": pin_number})])
 
 
-class IntelMraaInterruptGpio(IntelMraaGpioBase):
+class IntelMraaInterruptGpio(IntelMraaGpioBase, TerminatorBlock):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """
 

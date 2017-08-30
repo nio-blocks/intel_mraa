@@ -1,11 +1,12 @@
 import mraa
 
 from nio.properties import VersionProperty
+from nio.block.base import Block
 
 from .intel_mraa_gpio_base import IntelMraaGpioBase
 
 
-class IntelMraaReadGpio(IntelMraaGpioBase):
+class IntelMraaReadGpio(IntelMraaGpioBase, Block):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """
 

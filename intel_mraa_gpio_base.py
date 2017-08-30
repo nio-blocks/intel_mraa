@@ -1,12 +1,9 @@
 import mraa
 
-from nio.block.base import Block
 from nio.properties import IntProperty
-from nio.util.discovery import not_discoverable
 
 
-@not_discoverable
-class IntelMraaGpioBase(Block):
+class IntelMraaGpioBase(object):
 
     """ Use Intel's libmraa to interface with the IO on various platforms """
 
