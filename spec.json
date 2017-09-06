@@ -2,6 +2,9 @@
   "nio/IntelMraaInterruptGpio": {
     "version": "1.0.0",
     "description": "Use Intel's libmraa to handle gpio interrupts from the IO on Galileo, Edison & other platforms.",
+    "categories": [
+      "Hardware"
+    ],
     "properties": {
       "mraa_gpio_pin": {
         "title": "Mraa Pin #",
@@ -25,6 +28,9 @@
   "nio/IntelMraaReadGpio": {
     "version": "1.0.0",
     "description": "Use Intel's libmraa to read the IO on Galileo, Edison & other platforms. Reads are driven by input signals.",
+    "categories": [
+      "Hardware"
+    ],
     "properties": {
       "mraa_gpio_pin": {
         "title": "Mraa Pin #",
@@ -48,6 +54,9 @@
   "nio/IntelMraaWriteGpio": {
     "version": "1.0.0",
     "description": "Use Intel's libmraa to write to the IO on Galileo, Edison & other platforms.",
+    "categories": [
+      "Hardware"
+    ],
     "properties": {
       "mraa_gpio_pin": {
         "title": "Mraa Pin #",
