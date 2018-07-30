@@ -1,7 +1,7 @@
 {
   "nio/IntelMraaInterruptGpio": {
     "version": "1.0.0",
-    "description": "Use Intel's libmraa to handle gpio interrupts from the IO on Galileo, Edison & other platforms.",
+    "description": "Use Intel's MRAA I/O library (libmraa) to handle GPIO interrupts from the IO on Galileo, Edison, and other platforms.",
     "categories": [
       "Hardware"
     ],
@@ -9,7 +9,7 @@
       "mraa_gpio_pin": {
         "title": "Mraa Pin #",
         "type": "IntType",
-        "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)",
+        "description": "The MRAA pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md).",
         "default": "31"
       }
     },
@@ -27,7 +27,7 @@
   },
   "nio/IntelMraaReadGpio": {
     "version": "1.0.0",
-    "description": "Use Intel's libmraa to read the IO on Galileo, Edison & other platforms. Reads are driven by input signals.",
+    "description": "Use Intel's MRAA I/O library (libmraa) to read the IO on Galileo, Edison, and other platforms. Reads are driven by input signals.",
     "categories": [
       "Hardware"
     ],
@@ -35,7 +35,7 @@
       "mraa_gpio_pin": {
         "title": "Mraa Pin #",
         "type": "IntType",
-        "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)",
+        "description": "The MRAA pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md).",
         "default": "31"
       }
     },
@@ -53,7 +53,7 @@
   },
   "nio/IntelMraaWriteGpio": {
     "version": "1.0.0",
-    "description": "Use Intel's libmraa to write to the IO on Galileo, Edison & other platforms.",
+    "description": "Use Intel's MRAA I/O library (libmraa) to write to the IO on Galileo, Edison, and other platforms.",
     "categories": [
       "Hardware"
     ],
@@ -61,7 +61,7 @@
       "mraa_gpio_pin": {
         "title": "Mraa Pin #",
         "type": "IntType",
-        "description": "The Mraa pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md)",
+        "description": "The MRAA pin number. For Edison, see pin number mappings [here](https://github.com/intel-iot-devkit/mraa/blob/master/docs/edison.md).",
         "default": "31"
       },
       "value": {
